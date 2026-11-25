@@ -1,0 +1,22 @@
+[general]
+name=QBan(o)
+qgisMinimumVersion=3.44
+supportsQt6=True
+description=QBAN(O) geocodes addresses from an Excel or CSV file. It uses the BAN (Base Adresse Nationale), the French national address database.
+version=2.0
+author=CREASIG
+email=juliensanjose@hotmail.fr
+
+about=The address file must be open in QGIS. The address must be contained in a single column (number, street, postal code, city). Once geocoding is done, a "score" column indicates the reliability of the match, 1 being the best score (from 0.5 upwards, the location is reliable).
+
+changelog=2.0: new geocoding API from the Géoplateforme (data.geopf.fr), requests sent through the QGIS network stack (proxy support), Processing algorithms registered, compatibility with QGIS 3.44 and later (qgis.PyQt, no dependency on simplejson/requests), project cleanup, an empty address no longer creates a point at (0,0).
+
+tags=geocodage, BAN, adresse, france
+
+homepage=https://www.agam.org
+tracker=https://github.com/AGAM13002/qbano/issues
+repository=https://github.com/AGAM13002/qbano
+category=Plugins
+icon=icon.png
+experimental=False
+deprecated=False
