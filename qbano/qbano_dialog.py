@@ -23,6 +23,7 @@ from qgis.core import (
 )
 
 from . import ban
+from .documentation import DOCUMENTATION_HTML
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'qbano_dialog_base.ui'))
@@ -54,6 +55,7 @@ class QbanoDialog(QtWidgets.QDialog, FORM_CLASS):
         self._charger.clicked.connect(self.chercherCouches)
         self._listecouches.currentIndexChanged.connect(self.remplirChampAdresse)
         self._geocoder.clicked.connect(self.geocoder)
+        self._documentation.setHtml(DOCUMENTATION_HTML)
 
     # ------------------------------------------------------------------ couches
     def chercherCouches(self):
@@ -134,8 +136,10 @@ class QbanoDialog(QtWidgets.QDialog, FORM_CLASS):
         self._progression.setMaximum(max(layer.featureCount(), 1))
         self._progression.setValue(0)
         self._geocoder.setEnabled(False)
+        self._statut.setText('Géocodage en cours…')
 
         nouvelles = []
+        localisees = 0
         try:
             for j, src in enumerate(layer.getFeatures(), start=1):
                 self._progression.setValue(j)
@@ -153,6 +157,7 @@ class QbanoDialog(QtWidgets.QDialog, FORM_CLASS):
                 fet = QgsFeature(vl.fields())
                 attributs = list(src.attributes())
                 if trouve:
+                    localisees += 1
                     fet.setGeometry(QgsGeometry.fromPointXY(
                         QgsPointXY(trouve['lon'], trouve['lat'])))
                     attributs += [trouve['adresse'], trouve['score'], trouve['type']]
@@ -161,6 +166,7 @@ class QbanoDialog(QtWidgets.QDialog, FORM_CLASS):
                 fet.setAttributes(attributs)
                 nouvelles.append(fet)
         except ban.ErreurReseau as e:
+            self._statut.setText('Géocodage interrompu : erreur de connexion.')
             QtWidgets.QMessageBox.critical(
                 self, 'qbano', 'Erreur de connexion internet : {}'.format(e))
             return
@@ -170,6 +176,9 @@ class QbanoDialog(QtWidgets.QDialog, FORM_CLASS):
         pr.addFeatures(nouvelles)
         vl.updateExtents()
         QgsProject.instance().addMapLayer(vl)
+        self._statut.setText(
+            '{} adresse(s) localisée(s) sur {}. Couche « {} » ajoutée au projet.'.format(
+                localisees, len(nouvelles), vl.name()))
 
     def coordonnees(self, adresse, cp, insee, ville):
         """Interroge la BAN. Retourne {} si aucune adresse n'est trouvée."""

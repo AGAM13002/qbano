@@ -6,198 +6,222 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>665</width>
-    <height>377</height>
+    <width>700</width>
+    <height>560</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>560</width>
+    <height>480</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>qbano</string>
   </property>
-  <widget class="QDialogButtonBox" name="button_box">
-   <property name="geometry">
-    <rect>
-     <x>223</x>
-     <y>340</y>
-     <width>181</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="_listecouches">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>50</y>
-     <width>391</width>
-     <height>27</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>46</y>
-     <width>181</width>
-     <height>27</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Couche à géocoder</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="_charger">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>10</y>
-     <width>381</width>
-     <height>27</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Charger les couches du projet</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="_champadresse">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>90</y>
-     <width>391</width>
-     <height>27</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>90</y>
-     <width>181</width>
-     <height>27</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Champ adresse</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="_geocoder">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>260</y>
-     <width>371</width>
-     <height>27</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Géocoder</string>
-   </property>
-  </widget>
-  <widget class="QProgressBar" name="_progression">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>300</y>
-     <width>651</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="value">
-    <number>0</number>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="_champcp">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>130</y>
-     <width>391</width>
-     <height>27</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="_champville">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>210</y>
-     <width>391</width>
-     <height>27</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>130</y>
-     <width>181</width>
-     <height>27</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Code postal</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>210</y>
-     <width>181</width>
-     <height>27</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Ville</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="_champinsee">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>170</y>
-     <width>391</width>
-     <height>27</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_5">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>170</y>
-     <width>181</width>
-     <height>27</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Code INSEE</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-   </property>
-  </widget>
+  <layout class="QVBoxLayout" name="layout_principal">
+   <item>
+    <widget class="QTabWidget" name="_onglets">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="onglet_geocodage">
+      <attribute name="title">
+       <string>Géocodage</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="layout_geocodage">
+       <item>
+        <widget class="QLabel" name="_intro">
+         <property name="text">
+          <string>Localise des adresses à partir de la Base Adresse Nationale (BAN).</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupe_couche">
+         <property name="title">
+          <string>1. Couche source</string>
+         </property>
+         <layout class="QFormLayout" name="form_couche">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Couche à géocoder</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="_listecouches">
+            <property name="toolTip">
+             <string>Couche vectorielle, ou table sans géométrie (CSV, Excel), ouverte dans QGIS</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QPushButton" name="_charger">
+            <property name="toolTip">
+             <string>Met à jour la liste si vous avez ajouté ou supprimé des couches</string>
+            </property>
+            <property name="text">
+             <string>Recharger les couches du projet</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupe_adresse">
+         <property name="title">
+          <string>2. Adresse (obligatoire)</string>
+         </property>
+         <layout class="QFormLayout" name="form_adresse">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Champ adresse</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="_champadresse">
+            <property name="toolTip">
+             <string>Colonne contenant l'adresse (de préférence complète : numéro, rue, code postal, ville)</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupe_facultatif">
+         <property name="title">
+          <string>3. Champs facultatifs (affinent la recherche)</string>
+         </property>
+         <layout class="QFormLayout" name="form_facultatif">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Code postal</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="_champcp">
+            <property name="toolTip">
+             <string>Laisser vide si le code postal est déjà dans le champ adresse</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>Code INSEE</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QComboBox" name="_champinsee">
+            <property name="toolTip">
+             <string>Code INSEE de la commune : restreint la recherche à cette commune</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Ville</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QComboBox" name="_champville">
+            <property name="toolTip">
+             <string>Laisser vide si la ville est déjà dans le champ adresse</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="espace">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>10</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="_geocoder">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>34</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Lance le géocodage et ajoute une couche de points temporaire au projet</string>
+         </property>
+         <property name="text">
+          <string>Géocoder</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QProgressBar" name="_progression">
+         <property name="value">
+          <number>0</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="_statut">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="onglet_documentation">
+      <attribute name="title">
+       <string>Documentation</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="layout_documentation">
+       <item>
+        <widget class="QTextBrowser" name="_documentation">
+         <property name="openExternalLinks">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="button_box">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Close</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections>
@@ -206,32 +230,12 @@
    <signal>accepted()</signal>
    <receiver>QbanoDialogBase</receiver>
    <slot>accept()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>470</x>
-     <y>600</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>20</x>
-     <y>20</y>
-    </hint>
-   </hints>
   </connection>
   <connection>
    <sender>button_box</sender>
    <signal>rejected()</signal>
    <receiver>QbanoDialogBase</receiver>
    <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>470</x>
-     <y>600</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>20</x>
-     <y>20</y>
-    </hint>
-   </hints>
   </connection>
  </connections>
 </ui>
