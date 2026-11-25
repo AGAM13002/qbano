@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-qbano - géocodage d'adresses avec la Base Adresse Nationale (BAN).
+QBano - géocodage d'adresses avec la Base Adresse Nationale (BAN).
 
 Ce module contient la classe du plugin chargée par QGIS (barre d'outils et menu).
 Licence : GNU GPL v2 ou ultérieure.
@@ -11,14 +11,14 @@ from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import QAction
 from qgis.core import QgsApplication
 
-from .qbano_dialog import QbanoDialog
-from .qbano_provider import QbanoProvider
+from .QBano_dialog import QBanoDialog
+from .QBano_provider import QBanoProvider
 
 
-class Qbano:
+class QBano:
     """Implémentation du plugin QGIS."""
 
-    MENU = '&qbano'
+    MENU = '&QBano'
 
     def __init__(self, iface):
         self.iface = iface
@@ -29,14 +29,14 @@ class Qbano:
 
     def initProcessing(self):
         """Enregistre les algorithmes Géocodage / Géocodage inverse."""
-        self.provider = QbanoProvider()
+        self.provider = QBanoProvider()
         QgsApplication.processingRegistry().addProvider(self.provider)
 
     def initGui(self):
         """Crée l'entrée de menu et le bouton de la barre d'outils."""
         self.initProcessing()
         icon = QIcon(os.path.join(self.plugin_dir, 'icon.png'))
-        self.action = QAction(icon, 'qbano', self.iface.mainWindow())
+        self.action = QAction(icon, 'QBano', self.iface.mainWindow())
         self.action.setToolTip('Géocoder des adresses avec la BAN')
         self.action.triggered.connect(self.run)
         self.iface.addToolBarIcon(self.action)
@@ -59,7 +59,7 @@ class Qbano:
     def run(self):
         """Affiche la boîte de dialogue."""
         if self.dlg is None:
-            self.dlg = QbanoDialog(self.iface.mainWindow())
+            self.dlg = QBanoDialog(self.iface.mainWindow())
         self.dlg.chercherCouches()
         self.dlg.show()
         self.dlg.raise_()

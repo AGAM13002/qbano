@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-qbano - boîte de dialogue de géocodage avec la Base Adresse Nationale (BAN).
+QBano - boîte de dialogue de géocodage avec la Base Adresse Nationale (BAN).
 
 Licence : GNU GPL v2 ou ultérieure.
 """
@@ -26,7 +26,7 @@ from . import ban
 from .documentation import DOCUMENTATION_HTML
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
-    os.path.dirname(__file__), 'qbano_dialog_base.ui'))
+    os.path.dirname(__file__), 'QBano_dialog_base.ui'))
 
 CARACTERES_A_REMPLACER = re.compile(r'[\"\'\\.,:;]')
 
@@ -48,7 +48,7 @@ def _sans_accents(texte):
     return unicodedata.normalize('NFD', texte).encode('ascii', 'ignore').decode('ascii')
 
 
-class QbanoDialog(QtWidgets.QDialog, FORM_CLASS):
+class QBanoDialog(QtWidgets.QDialog, FORM_CLASS):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setupUi(self)
@@ -91,7 +91,7 @@ class QbanoDialog(QtWidgets.QDialog, FORM_CLASS):
 
     # ---------------------------------------------------------------- géocodage
     def deboguer(self, texte):
-        QgsMessageLog.logMessage(str(texte), tag='qbano', level=Qgis.Info)
+        QgsMessageLog.logMessage(str(texte), tag='QBano', level=Qgis.Info)
 
     @staticmethod
     def _nom_libre(nom, existants):
@@ -106,7 +106,7 @@ class QbanoDialog(QtWidgets.QDialog, FORM_CLASS):
         layer = self._couche_courante()
         if layer is None:
             QtWidgets.QMessageBox.warning(
-                self, 'qbano', 'Aucune couche sélectionnée.')
+                self, 'QBano', 'Aucune couche sélectionnée.')
             return
 
         champadresse = self._champadresse.currentText()
@@ -115,7 +115,7 @@ class QbanoDialog(QtWidgets.QDialog, FORM_CLASS):
         champville = self._champville.currentText()
         if not champadresse:
             QtWidgets.QMessageBox.warning(
-                self, 'qbano', "Choisissez le champ contenant l'adresse.")
+                self, 'QBano', "Choisissez le champ contenant l'adresse.")
             return
 
         # Couche de sortie : champs d'origine + 3 champs BAN
@@ -168,7 +168,7 @@ class QbanoDialog(QtWidgets.QDialog, FORM_CLASS):
         except ban.ErreurReseau as e:
             self._statut.setText('Géocodage interrompu : erreur de connexion.')
             QtWidgets.QMessageBox.critical(
-                self, 'qbano', 'Erreur de connexion internet : {}'.format(e))
+                self, 'QBano', 'Erreur de connexion internet : {}'.format(e))
             return
         finally:
             self._geocoder.setEnabled(True)

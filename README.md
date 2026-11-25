@@ -1,6 +1,6 @@
-# qbano
+# QBano
 
-qbano permet de géolocaliser vos adresses issues d'un fichier excel ou CSV. Il se sert de la base BAN (Base Adresse Nationale).
+QBano permet de géolocaliser vos adresses issues d'un fichier excel ou CSV. Il se sert de la base BAN (Base Adresse Nationale).
 
 Nécessite QGIS 3.44 ou supérieur. Le fichier des adresses doit être ouvert dans QGIS. L'adresse doit être contenue dans une seule colonne (numero, rue, code postal, ville). Une fois la géolocalisation effectuée, une colonne "score" permet de connaitre la fiabilité de l'adresse, 1 étant la meilleure note (à partir de 0,5, la localisation est fiable).
 
