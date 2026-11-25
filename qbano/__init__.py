@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 /***************************************************************************
- QBano
+ qbano
                                  A QGIS plugin
  a
                              -------------------
@@ -25,11 +25,11 @@
 
 # noinspection PyPep8Naming
 def classFactory(iface):  # pylint: disable=invalid-name
-    """Load QBano class from file QBano.
+    """Load Qbano class from file qbano.
 
     :param iface: A QGIS interface instance.
     :type iface: QgsInterface
     """
     #
-    from .QBano import QBano
-    return QBano(iface)
+    from .qbano import Qbano
+    return Qbano(iface)

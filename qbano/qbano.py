@@ -11,11 +11,11 @@ from qgis.PyQt.QtGui import QIcon
 from qgis.PyQt.QtWidgets import QAction
 from qgis.core import QgsApplication
 
-from .QBano_dialog import QBanoDialog
-from .QBano_provider import QBanoProvider
+from .qbano_dialog import QbanoDialog
+from .qbano_provider import QbanoProvider
 
 
-class QBano:
+class Qbano:
     """Implémentation du plugin QGIS."""
 
     MENU = '&QBan(o)'
@@ -29,7 +29,7 @@ class QBano:
 
     def initProcessing(self):
         """Enregistre les algorithmes Géocodage / Géocodage inverse."""
-        self.provider = QBanoProvider()
+        self.provider = QbanoProvider()
         QgsApplication.processingRegistry().addProvider(self.provider)
 
     def initGui(self):
@@ -59,7 +59,7 @@ class QBano:
     def run(self):
         """Affiche la boîte de dialogue."""
         if self.dlg is None:
-            self.dlg = QBanoDialog(self.iface.mainWindow())
+            self.dlg = QbanoDialog(self.iface.mainWindow())
         self.dlg.chercherCouches()
         self.dlg.show()
         self.dlg.raise_()

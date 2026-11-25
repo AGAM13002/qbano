@@ -25,7 +25,7 @@ from qgis.core import (
 from . import ban
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
-    os.path.dirname(__file__), 'QBano_dialog_base.ui'))
+    os.path.dirname(__file__), 'qbano_dialog_base.ui'))
 
 CARACTERES_A_REMPLACER = re.compile(r'[\"\'\\.,:;]')
 
@@ -47,7 +47,7 @@ def _sans_accents(texte):
     return unicodedata.normalize('NFD', texte).encode('ascii', 'ignore').decode('ascii')
 
 
-class QBanoDialog(QtWidgets.QDialog, FORM_CLASS):
+class QbanoDialog(QtWidgets.QDialog, FORM_CLASS):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setupUi(self)
@@ -89,7 +89,7 @@ class QBanoDialog(QtWidgets.QDialog, FORM_CLASS):
 
     # ---------------------------------------------------------------- géocodage
     def deboguer(self, texte):
-        QgsMessageLog.logMessage(str(texte), tag='QBano', level=Qgis.Info)
+        QgsMessageLog.logMessage(str(texte), tag='qbano', level=Qgis.Info)
 
     @staticmethod
     def _nom_libre(nom, existants):

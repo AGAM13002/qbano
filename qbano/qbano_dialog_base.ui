@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>QBanoDialogBase</class>
- <widget class="QDialog" name="QBanoDialogBase">
+ <class>QbanoDialogBase</class>
+ <widget class="QDialog" name="QbanoDialogBase">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -204,7 +204,7 @@
   <connection>
    <sender>button_box</sender>
    <signal>accepted()</signal>
-   <receiver>QBanoDialogBase</receiver>
+   <receiver>QbanoDialogBase</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -220,7 +220,7 @@
   <connection>
    <sender>button_box</sender>
    <signal>rejected()</signal>
-   <receiver>QBanoDialogBase</receiver>
+   <receiver>QbanoDialogBase</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

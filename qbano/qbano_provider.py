@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 /***************************************************************************
- QBano
+ qbano
                                  A QGIS plugin
  a
                               -------------------
@@ -25,7 +25,7 @@ from qgis.core import QgsProcessingProvider
 from .algs.reversegeocode import ReverseGeocode
 from .algs.geocode import Geocode
 
-class QBanoProvider(QgsProcessingProvider):
+class QbanoProvider(QgsProcessingProvider):
     def __init__(self):
         QgsProcessingProvider.__init__(self)
 
@@ -61,7 +61,7 @@ class QBanoProvider(QgsProcessingProvider):
 
         This string should be short (e.g. "Lastools") and localised.
         """
-        return self.tr('QBano')
+        return self.tr('qbano')
 
     def longName(self):
         """
