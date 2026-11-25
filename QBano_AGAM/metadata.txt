@@ -3,13 +3,14 @@ name=QBano
 qgisMinimumVersion=3.44
 qgisMaximumVersion=4.99
 description=QBano_AGAM geocodes addresses from an Excel or CSV file. It uses the BAN (Base Adresse Nationale), the French national address database.
-version=2.0.2
+version=2.0.3
 author=AGAM
 email=info@agam.org
 
 about=The address file must be open in QGIS. The address must be contained in a single column (number, street, postal code, city). Once geocoding is done, a "score" column indicates the reliability of the match, 1 being the best score (from 0.5 upwards, the location is reliable). QBano_AGAM is a fork of the QBan(o) plugin by CREASIG, distributed under the same license (GPL v2 or later).
 
-changelog=2.0.2: plugin display name set to QBano.
+changelog=2.0.3: re-release of 2.0.2 (plugin display name set to QBano).
+ 2.0.2: plugin display name set to QBano.
  2.0.1: removed the deprecated supportsQt6 flag and set qgisMaximumVersion=4.99 for QGIS 4 compatibility.
  2.0: new geocoding API from the Géoplateforme (data.geopf.fr), requests sent through the QGIS network stack (proxy support), Processing algorithms registered, compatibility with QGIS 3.44 and later (qgis.PyQt, no dependency on simplejson/requests), project cleanup, an empty address no longer creates a point at (0,0).
 
