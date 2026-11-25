@@ -1,5 +1,5 @@
 [general]
-name=QBan(o)
+name=qbano
 qgisMinimumVersion=3.44
 supportsQt6=True
 description=QBAN(O) geocodes addresses from an Excel or CSV file. It uses the BAN (Base Adresse Nationale), the French national address database.
