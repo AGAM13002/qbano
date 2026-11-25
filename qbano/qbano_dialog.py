@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-QBan(o) - boîte de dialogue de géocodage avec la Base Adresse Nationale (BAN).
+qbano - boîte de dialogue de géocodage avec la Base Adresse Nationale (BAN).
 
 Licence : GNU GPL v2 ou ultérieure.
 """
@@ -104,7 +104,7 @@ class QbanoDialog(QtWidgets.QDialog, FORM_CLASS):
         layer = self._couche_courante()
         if layer is None:
             QtWidgets.QMessageBox.warning(
-                self, 'QBAN(O)', 'Aucune couche sélectionnée.')
+                self, 'qbano', 'Aucune couche sélectionnée.')
             return
 
         champadresse = self._champadresse.currentText()
@@ -113,7 +113,7 @@ class QbanoDialog(QtWidgets.QDialog, FORM_CLASS):
         champville = self._champville.currentText()
         if not champadresse:
             QtWidgets.QMessageBox.warning(
-                self, 'QBAN(O)', "Choisissez le champ contenant l'adresse.")
+                self, 'qbano', "Choisissez le champ contenant l'adresse.")
             return
 
         # Couche de sortie : champs d'origine + 3 champs BAN
@@ -162,7 +162,7 @@ class QbanoDialog(QtWidgets.QDialog, FORM_CLASS):
                 nouvelles.append(fet)
         except ban.ErreurReseau as e:
             QtWidgets.QMessageBox.critical(
-                self, 'QBAN(O)', 'Erreur de connexion internet : {}'.format(e))
+                self, 'qbano', 'Erreur de connexion internet : {}'.format(e))
             return
         finally:
             self._geocoder.setEnabled(True)

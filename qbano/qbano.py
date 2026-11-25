@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-QBan(o) - géocodage d'adresses avec la Base Adresse Nationale (BAN).
+qbano - géocodage d'adresses avec la Base Adresse Nationale (BAN).
 
 Ce module contient la classe du plugin chargée par QGIS (barre d'outils et menu).
 Licence : GNU GPL v2 ou ultérieure.
@@ -18,7 +18,7 @@ from .qbano_provider import QbanoProvider
 class Qbano:
     """Implémentation du plugin QGIS."""
 
-    MENU = '&QBan(o)'
+    MENU = '&qbano'
 
     def __init__(self, iface):
         self.iface = iface
@@ -36,7 +36,7 @@ class Qbano:
         """Crée l'entrée de menu et le bouton de la barre d'outils."""
         self.initProcessing()
         icon = QIcon(os.path.join(self.plugin_dir, 'icon.png'))
-        self.action = QAction(icon, 'QBan(o)', self.iface.mainWindow())
+        self.action = QAction(icon, 'qbano', self.iface.mainWindow())
         self.action.setToolTip('Géocoder des adresses avec la BAN')
         self.action.triggered.connect(self.run)
         self.iface.addToolBarIcon(self.action)
