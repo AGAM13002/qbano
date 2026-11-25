@@ -91,7 +91,7 @@ class QBanoDialog(QtWidgets.QDialog, FORM_CLASS):
 
     # ---------------------------------------------------------------- géocodage
     def deboguer(self, texte):
-        QgsMessageLog.logMessage(str(texte), tag='QBano', level=Qgis.Info)
+        QgsMessageLog.logMessage(str(texte), tag='QBano_AGAM', level=Qgis.Info)
 
     @staticmethod
     def _nom_libre(nom, existants):
@@ -106,7 +106,7 @@ class QBanoDialog(QtWidgets.QDialog, FORM_CLASS):
         layer = self._couche_courante()
         if layer is None:
             QtWidgets.QMessageBox.warning(
-                self, 'QBano', 'Aucune couche sélectionnée.')
+                self, 'QBano_AGAM', 'Aucune couche sélectionnée.')
             return
 
         champadresse = self._champadresse.currentText()
@@ -115,7 +115,7 @@ class QBanoDialog(QtWidgets.QDialog, FORM_CLASS):
         champville = self._champville.currentText()
         if not champadresse:
             QtWidgets.QMessageBox.warning(
-                self, 'QBano', "Choisissez le champ contenant l'adresse.")
+                self, 'QBano_AGAM', "Choisissez le champ contenant l'adresse.")
             return
 
         # Couche de sortie : champs d'origine + 3 champs BAN
@@ -168,7 +168,7 @@ class QBanoDialog(QtWidgets.QDialog, FORM_CLASS):
         except ban.ErreurReseau as e:
             self._statut.setText('Géocodage interrompu : erreur de connexion.')
             QtWidgets.QMessageBox.critical(
-                self, 'QBano', 'Erreur de connexion internet : {}'.format(e))
+                self, 'QBano_AGAM', 'Erreur de connexion internet : {}'.format(e))
             return
         finally:
             self._geocoder.setEnabled(True)

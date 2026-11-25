@@ -18,7 +18,7 @@ from .QBano_provider import QBanoProvider
 class QBano:
     """Implémentation du plugin QGIS."""
 
-    MENU = '&QBano'
+    MENU = '&QBano_AGAM'
 
     def __init__(self, iface):
         self.iface = iface
@@ -36,7 +36,7 @@ class QBano:
         """Crée l'entrée de menu et le bouton de la barre d'outils."""
         self.initProcessing()
         icon = QIcon(os.path.join(self.plugin_dir, 'icon.png'))
-        self.action = QAction(icon, 'QBano', self.iface.mainWindow())
+        self.action = QAction(icon, 'QBano_AGAM', self.iface.mainWindow())
         self.action.setToolTip('Géocoder des adresses avec la BAN')
         self.action.triggered.connect(self.run)
         self.iface.addToolBarIcon(self.action)

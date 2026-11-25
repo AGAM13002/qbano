@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-QBano - contenu de l'onglet « Documentation » de la boîte de dialogue.
+QBano_AGAM - contenu de l'onglet « Documentation » de la boîte de dialogue.
 
 Licence : GNU GPL v2 ou ultérieure.
 """
 
 DOCUMENTATION_HTML = """
-<h2>QBano - géocodage avec la Base Adresse Nationale</h2>
-<p>QBano transforme des adresses (fichier CSV, Excel ou table de couche) en points
+<h2>QBano_AGAM - géocodage avec la Base Adresse Nationale</h2>
+<p>QBano_AGAM transforme des adresses (fichier CSV, Excel ou table de couche) en points
 sur la carte, grâce au service de géocodage de la Géoplateforme (BAN).
 Une connexion internet est nécessaire.</p>
 
@@ -55,7 +55,7 @@ vérifiez l'adresse trouvée avant de l'utiliser.</p>
 </ul>
 
 <h3>Algorithmes de la boîte à outils Processing</h3>
-<p>QBano ajoute deux algorithmes dans le groupe <b>Géocodage</b> de la boîte à
+<p>QBano_AGAM ajoute deux algorithmes dans le groupe <b>Géocodage</b> de la boîte à
 outils Processing, utilisables dans le modeleur graphique et par lots :</p>
 <ul>
   <li><b>Géocodage</b> : l'adresse est fournie par une expression (une colonne
@@ -70,7 +70,7 @@ outils Processing, utilisables dans le modeleur graphique et par lots :</p>
 <ul>
   <li>Les requêtes passent par le réseau de QGIS : le proxy configuré dans QGIS
       est respecté.</li>
-  <li>En cas de dépassement de quota du service, QBano patiente et réessaie
+  <li>En cas de dépassement de quota du service, QBano_AGAM patiente et réessaie
       jusqu'à trois fois.</li>
   <li>Le résultat dépend de la qualité de vos adresses : vérifiez toujours les
       scores faibles.</li>
@@ -80,5 +80,6 @@ outils Processing, utilisables dans le modeleur graphique et par lots :</p>
 <p>Source, signalement d'anomalies et suggestions :
 <a href="https://github.com/AGAM13002/qbano">github.com/AGAM13002/qbano</a>
 (onglet <i>Issues</i>).<br/>
-Licence : GNU GPL v2 ou ultérieure.</p>
+Licence : GNU GPL v2 ou ultérieure.<br/>
+QBano_AGAM est dérivé du plugin QBan(o) de CREASIG.</p>
 """

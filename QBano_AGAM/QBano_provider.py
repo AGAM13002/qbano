@@ -52,7 +52,7 @@ class QBanoProvider(QgsProcessingProvider):
         string should be a unique, short, character only string, eg "qgis" or
         "gdal". This string should not be localised.
         """
-        return 'QBano'
+        return 'QBano_AGAM'
 
     def name(self):
         """
@@ -61,7 +61,7 @@ class QBanoProvider(QgsProcessingProvider):
 
         This string should be short (e.g. "Lastools") and localised.
         """
-        return self.tr('QBano')
+        return self.tr('QBano_AGAM')
 
     def longName(self):
         """

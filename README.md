@@ -1,6 +1,8 @@
-# QBano
+# QBano_AGAM
 
-QBano permet de géolocaliser vos adresses issues d'un fichier excel ou CSV. Il se sert de la base BAN (Base Adresse Nationale).
+QBano_AGAM permet de géolocaliser vos adresses issues d'un fichier excel ou CSV. Il se sert de la base BAN (Base Adresse Nationale).
+
+QBano_AGAM est un fork du plugin QBan(o) de CREASIG, distribué sous la même licence (GPL v2 ou ultérieure).
 
 Nécessite QGIS 3.44 ou supérieur. Le fichier des adresses doit être ouvert dans QGIS. L'adresse doit être contenue dans une seule colonne (numero, rue, code postal, ville). Une fois la géolocalisation effectuée, une colonne "score" permet de connaitre la fiabilité de l'adresse, 1 étant la meilleure note (à partir de 0,5, la localisation est fiable).
 

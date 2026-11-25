@@ -21,7 +21,7 @@ GEO_COMMUNES_URL = 'https://geo.api.gouv.fr/communes'
 
 TIMEOUT_MS = 30000
 MAX_TENTATIVES = 3
-USER_AGENT = b'QBano-QGIS-plugin'
+USER_AGENT = b'QBano_AGAM-QGIS-plugin'
 
 
 class ErreurReseau(Exception):
