@@ -7,7 +7,7 @@
                              -------------------
         begin                : 2017-10-14
         copyright            : (C) 2017 by CREASIG
-        email                : concact@creasig.fr
+        email                : info@agam.org
         git sha              : $Format:%H$
  ***************************************************************************/
 
