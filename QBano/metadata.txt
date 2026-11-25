@@ -18,5 +18,6 @@ tracker=https://github.com/AGAM13002/qbano/issues
 repository=https://github.com/AGAM13002/qbano
 category=Plugins
 icon=icon.png
+license=GPL-2.0-or-later
 experimental=False
 deprecated=False
